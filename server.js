@@ -14,6 +14,7 @@ app.use(cors())
 const admin = require("./Routes/admin_routes")
 const bookStore = require("./Routes/bookStore_routes")
 const contact = require("./Routes/contact_routes")
+const adminPassword = require("./Routes/forgotPasswordforAdmin")
 
 const options = {
     definition: {
@@ -40,6 +41,7 @@ const options = {
  app.use('/api/v1/admin',admin)
  app.use('/api/v1',bookStore)
  app.use('/api/v1',contact)
+ app.use('/api/v1',adminPassword)
 
 
 app.listen(process.env.PORT, () => console.log(`http://localhost:${process.env.PORT || 4000}`))
